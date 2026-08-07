@@ -1,0 +1,13 @@
+# build artifacts
+*.o
+*.a
+tests/runtests
+tests/compare_c
+
+# test/comparison scratch files
+tests/*.tmp
+tests/sweep_*.csv
+tests/naca64_roundtrip.tmp
+
+# scan-build output
+scan-build-*/
