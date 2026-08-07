@@ -49,7 +49,7 @@ and once per machine
 `julia --project=vendor/CCBlade.jl -e 'using Pkg; Pkg.instantiate()'`.
 
 - `tests/test_arrays.h` — expected values extracted from the Julia suite:
-  `python3 tests/extract_arrays.py`
+  `julia tests/extract_arrays.jl`
 - `tests/reference_data.h` — Julia-generated values for viterna, Akima, and
   Re/Mach airfoil evaluators (from `tests/`):
   `julia --project=../vendor/CCBlade.jl gen_reference.jl`

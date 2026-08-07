@@ -50,7 +50,7 @@ Dependencies: a C99 compiler and libm. No external libraries.
 - `tests/gen_reference.jl`, `tests/reference_data.h` — Julia-generated
   reference values for functions the Julia suite does not cover (viterna,
   Re/Mach airfoil evaluators, Akima extrapolation)
-- `tests/extract_arrays.py`, `tests/test_arrays.h` — test data transcribed
+- `tests/extract_arrays.jl`, `tests/test_arrays.h` — test data transcribed
   programmatically from `runtests.jl`
 - `tests/compare_julia.jl`, `tests/compare_c.c` — end-to-end C-vs-Julia
   sweep comparison
