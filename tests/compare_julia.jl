@@ -1,5 +1,7 @@
 # Dumps T/Q over a fresh (Vinf, RPM) sweep for the NACA64 test prop,
 # including hover (Vinf=0) and stopped-prop (RPM=0) edge cases.
+# Uses the vendored CCBlade.jl submodule (git submodule update --init).
+# Run from tests/:  julia --project=../vendor/CCBlade.jl compare_julia.jl
 using CCBlade
 using Printf
 

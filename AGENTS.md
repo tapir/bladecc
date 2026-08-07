@@ -43,12 +43,18 @@ error. When changing numerical code:
 
 ## Regenerating test data
 
+CCBlade.jl is vendored as a git submodule at `vendor/CCBlade.jl` (only used
+to regenerate/verify test data). Run `git submodule update --init` first,
+and once per machine
+`julia --project=vendor/CCBlade.jl -e 'using Pkg; Pkg.instantiate()'`.
+
 - `tests/test_arrays.h` — expected values extracted from the Julia suite:
   `python3 tests/extract_arrays.py`
 - `tests/reference_data.h` — Julia-generated values for viterna, Akima, and
-  Re/Mach airfoil evaluators:
-  `julia --project=../CCBlade.jl tests/gen_reference.jl` (from `tests/`)
-- End-to-end C-vs-Julia sweep: run `tests/compare_julia.jl`, compile/run
+  Re/Mach airfoil evaluators (from `tests/`):
+  `julia --project=../vendor/CCBlade.jl gen_reference.jl`
+- End-to-end C-vs-Julia sweep: run `tests/compare_julia.jl` with
+  `--project=../vendor/CCBlade.jl` (from `tests/`), compile/run
   `tests/compare_c.c`, diff the two CSVs (both scripts print instructions;
   remove the CSVs afterwards — they are gitignored).
 

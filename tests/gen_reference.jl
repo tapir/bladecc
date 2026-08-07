@@ -1,7 +1,9 @@
 # Generates reference_data.h for the C test suite.
 # Covers functions not exercised by the Julia test suite:
 # viterna, AlphaReAF, AlphaMachAF, AlphaReMachAF (evaluation), and akima spot checks.
-# Run from the CCBlade.jl project:  julia --project=../CCBlade.jl gen_reference.jl
+# Uses the vendored CCBlade.jl submodule (git submodule update --init).
+# Run from tests/:  julia --project=../vendor/CCBlade.jl gen_reference.jl
+# (first time only: julia --project=../vendor/CCBlade.jl -e 'using Pkg; Pkg.instantiate()')
 
 using CCBlade
 using Printf

@@ -4,9 +4,14 @@ so the C test suite uses byte-identical data. Scales like 1e3*[...] or
 pi/180*[...] are emitted as separate constants applied at compare time."""
 import re
 import sys
+from pathlib import Path
 
-SRC = "/home/cosku/Documents/bemt/CCBlade.jl/test/runtests.jl"
-OUT = "/home/cosku/Documents/bemt/ccbladecc/tests/test_arrays.h"
+TESTS_DIR = Path(__file__).resolve().parent
+SRC = TESTS_DIR.parent / "vendor" / "CCBlade.jl" / "test" / "runtests.jl"
+OUT = TESTS_DIR / "test_arrays.h"
+
+if not SRC.exists():
+    sys.exit(f"{SRC} not found; run: git submodule update --init")
 
 text = open(SRC).read()
 

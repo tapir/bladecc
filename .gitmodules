@@ -1,0 +1,3 @@
+[submodule "vendor/CCBlade.jl"]
+	path = vendor/CCBlade.jl
+	url = https://github.com/byuflowlab/CCBlade.jl
